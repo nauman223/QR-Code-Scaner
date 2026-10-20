@@ -1,0 +1,19 @@
+<label [for]="id" class="app-toggle" [class.app-toggle--disabled]="disabled()">
+  <span class="app-toggle__text">
+    <span class="app-toggle__label">{{ label() }}</span>
+    @if (description(); as text) {
+      <span class="app-toggle__description">{{ text }}</span>
+    }
+  </span>
+  <span class="app-toggle__switch">
+    <input
+      [id]="id"
+      type="checkbox"
+      class="app-toggle__input"
+      [checked]="checked()"
+      [disabled]="disabled()"
+      (change)="handleChange($event)"
+    />
+    <span class="app-toggle__track" aria-hidden="true"></span>
+  </span>
+</label>

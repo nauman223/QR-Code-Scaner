@@ -1,0 +1,20 @@
+// Rem-based type scale. Never hard-code a root font-size in px or use the
+// 62.5% html hack — both break the user's OS/browser dynamic-type setting.
+
+:root {
+  --app-font-size-xs: 0.75rem;
+  --app-font-size-sm: 0.875rem;
+  --app-font-size-md: 1rem;
+  --app-font-size-lg: 1.125rem;
+  --app-font-size-xl: 1.5rem;
+  --app-font-size-2xl: 2rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}

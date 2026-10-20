@@ -1,0 +1,20 @@
+@if (open()) {
+  <!-- eslint-disable-next-line @angular-eslint/template/click-events-have-key-events, @angular-eslint/template/interactive-supports-focus -->
+  <div class="app-modal-backdrop" (click)="handleBackdropClick($event)">
+    <div
+      #panel
+      class="app-modal"
+      role="dialog"
+      aria-modal="true"
+      [attr.aria-label]="title()"
+      tabindex="-1"
+    >
+      @if (title(); as titleText) {
+        <h2 class="app-modal__title">{{ titleText }}</h2>
+      }
+      <div class="app-modal__body">
+        <ng-content />
+      </div>
+    </div>
+  </div>
+}

@@ -1,0 +1,16 @@
+@use '../abstracts/mixins';
+
+// Applied by the shell/tab-bar components so content never sits under a
+// notch, the iOS home indicator, or Android gesture nav.
+.safe-area-top {
+  @include mixins.safe-area(top);
+}
+
+.safe-area-bottom {
+  @include mixins.safe-area(bottom);
+}
+
+.safe-area-x {
+  @include mixins.safe-area(left);
+  @include mixins.safe-area(right);
+}

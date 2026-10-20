@@ -1,0 +1,16 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.shell {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.shell__outlet-wrapper {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}

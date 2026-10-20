@@ -1,0 +1,41 @@
+@use 'variables' as vars;
+
+/// Pads an element for the iOS/Android safe area on the given side.
+/// @param {String} $side - One of `top`, `right`, `bottom`, `left`.
+/// @param {String} $property - CSS property to apply the inset to (default: padding).
+@mixin safe-area($side, $property: padding) {
+  #{$property}-#{$side}: max(env(safe-area-inset-#{$side}, 0px), 0px);
+}
+
+/// Guarantees a minimum 44x44px touch target regardless of visual content size.
+@mixin touch-target {
+  min-width: vars.$touch-target-min;
+  min-height: vars.$touch-target-min;
+}
+
+/// Visually hides content while keeping it available to screen readers.
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/// Consistent, WCAG-friendly focus ring for interactive elements.
+@mixin focus-ring {
+  outline: 2px solid var(--app-color-focus-ring);
+  outline-offset: 2px;
+}
+
+/// Restricts animation to compositor-friendly properties (transform/opacity)
+/// to keep interactions at 60fps.
+@mixin transform-transition($duration: 200ms, $easing: ease-out) {
+  transition:
+    transform $duration $easing,
+    opacity $duration $easing;
+}

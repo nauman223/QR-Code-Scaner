@@ -1,0 +1,40 @@
+:host {
+  display: block;
+}
+
+.app-segmented {
+  display: flex;
+  gap: 2px;
+  padding: 2px;
+  background-color: var(--app-color-surface-alt);
+  border-radius: var(--app-radius-md);
+}
+
+.app-segmented__item {
+  flex: 1;
+  min-height: 2.25rem;
+  padding: var(--app-space-xs) var(--app-space-sm);
+  border: none;
+  border-radius: calc(var(--app-radius-md) - 2px);
+  background-color: transparent;
+  color: var(--app-color-text-muted);
+  font-size: var(--app-font-size-sm);
+  font-weight: 600;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid var(--app-color-focus-ring);
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+.app-segmented__item--active {
+  background-color: var(--app-color-surface);
+  color: var(--app-color-text);
+  box-shadow: var(--app-shadow-sm);
+}

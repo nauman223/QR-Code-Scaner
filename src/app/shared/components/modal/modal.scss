@@ -1,0 +1,36 @@
+:host {
+  display: contents;
+}
+
+.app-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--app-space-lg);
+  background-color: var(--app-color-overlay);
+}
+
+.app-modal {
+  width: 100%;
+  max-width: 24rem;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: var(--app-space-lg);
+  border-radius: var(--app-radius-lg);
+  background-color: var(--app-color-surface);
+  box-shadow: var(--app-shadow-md);
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.app-modal__title {
+  margin: 0 0 var(--app-space-md);
+  font-size: var(--app-font-size-lg);
+  font-weight: 600;
+  color: var(--app-color-text);
+}

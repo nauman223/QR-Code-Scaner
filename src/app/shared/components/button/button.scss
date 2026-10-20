@@ -1,0 +1,84 @@
+@use 'abstracts/mixins';
+
+:host {
+  display: inline-block;
+}
+
+.app-button {
+  @include mixins.touch-target;
+  @include mixins.transform-transition(150ms);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--app-space-sm);
+  padding: 0 var(--app-space-lg);
+  border: none;
+  border-radius: var(--app-radius-md);
+  font-weight: 600;
+  font-size: var(--app-font-size-md);
+  cursor: pointer;
+
+  &:active:not(:disabled) {
+    transform: scale(0.97);
+  }
+
+  &:focus-visible {
+    @include mixins.focus-ring;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.app-button--primary {
+  background-color: var(--bs-primary);
+  color: #fff;
+}
+
+.app-button--secondary {
+  background-color: var(--app-color-surface-alt);
+  color: var(--app-color-text);
+}
+
+.app-button--ghost {
+  background-color: transparent;
+  color: var(--bs-primary);
+}
+
+.app-button--danger {
+  background-color: var(--bs-danger);
+  color: #fff;
+}
+
+.app-button__label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--app-space-sm);
+}
+
+.app-button__label--hidden {
+  visibility: hidden;
+}
+
+.app-button__spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid rgb(255 255 255 / 40%);
+  border-top-color: currentcolor;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: app-button-spin 700ms linear infinite;
+}
+
+@keyframes app-button-spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

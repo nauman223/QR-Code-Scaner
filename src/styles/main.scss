@@ -1,0 +1,33 @@
+// Single SCSS entry point.
+//
+// Sass requires every `@use`/`@forward` in a file to precede any `@import`,
+// so our own module-system partials are loaded first below. They are fully
+// self-contained (no dependency on Bootstrap's variables), so load order
+// between the two groups has no effect on the CSS produced.
+//
+// Bootstrap 5 has not migrated its own source to the `@use` module system,
+// so its `!default` variable overrides only work through `@import`. Import
+// order there matters:
+//   1. Bootstrap functions (needed by our own variable overrides)
+//   2. Our variable overrides (must precede Bootstrap's `!default` variables)
+//   3. Bootstrap's own variables/maps/mixins/root/reboot
+//   4. Bootstrap's trimmed utilities API
+
+@use 'themes/light';
+@use 'themes/dark';
+@use 'base/typography';
+@use 'base/reboot';
+@use 'base/safe-area';
+
+@import 'bootstrap/scss/functions';
+@import 'abstracts/variables';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/variables-dark';
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/root';
+@import 'bootstrap/scss/reboot';
+
+@import 'bootstrap/scss/utilities';
+@import 'abstracts/utilities';
+@import 'bootstrap/scss/utilities/api';

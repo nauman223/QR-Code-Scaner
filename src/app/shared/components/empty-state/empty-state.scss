@@ -1,0 +1,29 @@
+:host {
+  display: block;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--app-space-xl) var(--app-space-lg);
+  text-align: center;
+}
+
+.empty-state__icon {
+  margin-bottom: var(--app-space-md);
+  color: var(--app-color-text-muted);
+}
+
+.empty-state__title {
+  margin: 0 0 var(--app-space-xs);
+  font-weight: 600;
+  font-size: var(--app-font-size-lg);
+  color: var(--app-color-text);
+}
+
+.empty-state__message {
+  margin: 0 0 var(--app-space-lg);
+  color: var(--app-color-text-muted);
+  font-size: var(--app-font-size-sm);
+}

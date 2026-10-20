@@ -1,0 +1,13 @@
+<nav class="tab-bar safe-area-bottom" aria-label="Primary">
+  @for (tab of tabs; track tab.path) {
+    <a
+      class="tab-bar__item"
+      [routerLink]="tab.path"
+      routerLinkActive="tab-bar__item--active"
+      [attr.aria-label]="tab.label"
+    >
+      <app-icon [name]="tab.icon" [size]="24" />
+      <span class="tab-bar__label">{{ tab.label }}</span>
+    </a>
+  }
+</nav>

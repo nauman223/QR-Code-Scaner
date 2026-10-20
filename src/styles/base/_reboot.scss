@@ -1,0 +1,23 @@
+// Small platform-sanity tweaks layered on top of Bootstrap's reboot.
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  overscroll-behavior-y: none;
+  -webkit-tap-highlight-color: transparent;
+  text-size-adjust: 100%;
+}
+
+// The scanner screen needs a see-through WebView while the native camera
+// preview is running underneath it. Toggled via a body class, never global.
+body.scanner-active {
+  background: transparent !important;
+}
+
+a,
+button {
+  touch-action: manipulation;
+}

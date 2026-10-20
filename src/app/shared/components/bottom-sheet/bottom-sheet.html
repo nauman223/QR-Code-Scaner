@@ -1,0 +1,27 @@
+@if (open()) {
+  <!-- eslint-disable-next-line @angular-eslint/template/click-events-have-key-events, @angular-eslint/template/interactive-supports-focus -->
+  <div class="app-sheet-backdrop" (click)="handleBackdropClick($event)">
+    <div
+      #panel
+      class="app-sheet"
+      role="dialog"
+      aria-modal="true"
+      tabindex="-1"
+      [class.app-sheet--dragging]="dragging()"
+      [style.transform]="'translateY(' + dragOffsetPx() + 'px)'"
+    >
+      <button
+        type="button"
+        class="app-sheet__handle"
+        aria-label="Drag to dismiss"
+        (pointerdown)="handleDragStart($event, panel)"
+        (pointermove)="handleDragMove($event)"
+        (pointerup)="handleDragEnd()"
+        (pointercancel)="handleDragEnd()"
+      ></button>
+      <div class="app-sheet__body">
+        <ng-content />
+      </div>
+    </div>
+  </div>
+}

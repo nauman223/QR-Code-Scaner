@@ -1,0 +1,28 @@
+// Custom design tokens, layered on top of Bootstrap's own `--bs-*`
+// variables. These are the tokens component SCSS should reach for; they
+// swap instantly at runtime when ThemeService sets `data-bs-theme`.
+:root,
+[data-bs-theme='light'] {
+  --app-color-surface: #ffffff;
+  --app-color-surface-alt: #f3f4f6;
+  --app-color-text: #111827;
+  --app-color-text-muted: #6b7280;
+  --app-color-border: #e5e7eb;
+  --app-color-overlay: rgb(0 0 0 / 55%);
+  --app-color-focus-ring: #2563eb;
+  --app-color-danger-bg: #fef2f2;
+  --app-color-warning-bg: #fffbeb;
+
+  --app-radius-sm: 0.5rem;
+  --app-radius-md: 0.75rem;
+  --app-radius-lg: 1rem;
+
+  --app-space-xs: 0.25rem;
+  --app-space-sm: 0.5rem;
+  --app-space-md: 1rem;
+  --app-space-lg: 1.5rem;
+  --app-space-xl: 2rem;
+
+  --app-shadow-sm: 0 1px 2px rgb(0 0 0 / 6%);
+  --app-shadow-md: 0 4px 12px rgb(0 0 0 / 10%);
+}

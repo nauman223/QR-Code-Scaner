@@ -1,0 +1,58 @@
+:host {
+  display: contents;
+}
+
+.app-toast-container {
+  position: fixed;
+  right: 0;
+  bottom: calc(4.75rem + env(safe-area-inset-bottom, 0px));
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--app-space-sm);
+  padding: 0 var(--app-space-md);
+  pointer-events: none;
+}
+
+.app-toast {
+  display: flex;
+  align-items: center;
+  gap: var(--app-space-sm);
+  width: 100%;
+  max-width: 28rem;
+  padding: var(--app-space-sm) var(--app-space-md);
+  border-radius: var(--app-radius-md);
+  background-color: var(--app-color-text);
+  color: var(--app-color-surface);
+  box-shadow: var(--app-shadow-md);
+  pointer-events: auto;
+}
+
+.app-toast__text {
+  flex: 1;
+  font-size: var(--app-font-size-sm);
+}
+
+.app-toast__action {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-weight: 700;
+  font-size: var(--app-font-size-sm);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.app-toast__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}

@@ -1,0 +1,21 @@
+<div class="app-field">
+  <label [for]="id" class="app-field__label">{{ label() }}</label>
+  <select
+    [id]="id"
+    class="app-field__control"
+    [class.app-field__control--invalid]="errorMessage()"
+    [disabled]="disabled()"
+    [value]="value()"
+    [attr.aria-invalid]="errorMessage() ? true : null"
+    [attr.aria-describedby]="errorMessage() ? id + '-error' : null"
+    (change)="handleChange($event)"
+    (blur)="handleBlur()"
+  >
+    @for (option of options(); track option.value) {
+      <option [value]="option.value">{{ option.label }}</option>
+    }
+  </select>
+  @if (errorMessage(); as message) {
+    <p [id]="id + '-error'" class="app-field__error" role="alert">{{ message }}</p>
+  }
+</div>

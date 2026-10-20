@@ -1,0 +1,9 @@
+@use 'components/form-field';
+
+:host {
+  display: block;
+}
+
+textarea.app-field__control {
+  resize: vertical;
+}

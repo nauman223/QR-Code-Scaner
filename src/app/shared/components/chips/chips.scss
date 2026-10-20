@@ -1,0 +1,39 @@
+@use 'abstracts/mixins';
+
+:host {
+  display: block;
+}
+
+.app-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--app-space-sm);
+}
+
+.app-chips__item {
+  @include mixins.touch-target;
+
+  padding: 0 var(--app-space-md);
+  border: 1px solid var(--app-color-border);
+  border-radius: 999px;
+  background-color: var(--app-color-surface);
+  color: var(--app-color-text);
+  font-size: var(--app-font-size-sm);
+  font-weight: 500;
+  cursor: pointer;
+
+  &:focus-visible {
+    @include mixins.focus-ring;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+.app-chips__item--active {
+  border-color: var(--bs-primary);
+  background-color: var(--bs-primary);
+  color: #fff;
+}

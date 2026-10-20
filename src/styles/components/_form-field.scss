@@ -1,0 +1,54 @@
+// Shared structural styles for Input/Textarea/Select. Each consuming
+// component `@use`s this partial; Angular's emulated encapsulation scopes
+// the resulting CSS separately per component, so this stays DRY without
+// becoming global.
+
+.app-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--app-space-xs);
+  margin-bottom: var(--app-space-md);
+}
+
+.app-field__label {
+  font-size: var(--app-font-size-sm);
+  font-weight: 600;
+  color: var(--app-color-text);
+}
+
+.app-field__control {
+  min-height: 2.75rem;
+  padding: var(--app-space-sm) var(--app-space-md);
+  border: 1px solid var(--app-color-border);
+  border-radius: var(--app-radius-md);
+  background-color: var(--app-color-surface);
+  color: var(--app-color-text);
+  font-size: var(--app-font-size-md);
+  font-family: inherit;
+
+  &:focus-visible {
+    outline: 2px solid var(--app-color-focus-ring);
+    outline-offset: 1px;
+    border-color: var(--app-color-focus-ring);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+.app-field__control--invalid {
+  border-color: var(--bs-danger);
+}
+
+.app-field__error {
+  margin: 0;
+  font-size: var(--app-font-size-xs);
+  color: var(--bs-danger);
+}
+
+.app-field__hint {
+  margin: 0;
+  font-size: var(--app-font-size-xs);
+  color: var(--app-color-text-muted);
+}

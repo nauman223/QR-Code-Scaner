@@ -1,0 +1,17 @@
+:host {
+  display: inline-flex;
+}
+
+.app-spinner {
+  display: inline-block;
+  border: 2px solid var(--app-color-border);
+  border-top-color: var(--bs-primary);
+  border-radius: 50%;
+  animation: app-spinner-spin 700ms linear infinite;
+}
+
+@keyframes app-spinner-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

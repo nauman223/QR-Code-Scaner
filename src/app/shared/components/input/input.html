@@ -1,0 +1,22 @@
+<div class="app-field">
+  <label [for]="id" class="app-field__label">{{ label() }}</label>
+  <input
+    [id]="id"
+    class="app-field__control"
+    [class.app-field__control--invalid]="errorMessage()"
+    [type]="type()"
+    [placeholder]="placeholder()"
+    [attr.autocomplete]="autocomplete()"
+    [disabled]="disabled()"
+    [value]="value()"
+    [attr.aria-invalid]="errorMessage() ? true : null"
+    [attr.aria-describedby]="errorMessage() ? id + '-error' : hint() ? id + '-hint' : null"
+    (input)="handleInput($event)"
+    (blur)="handleBlur()"
+  />
+  @if (errorMessage(); as message) {
+    <p [id]="id + '-error'" class="app-field__error" role="alert">{{ message }}</p>
+  } @else if (hint(); as hintText) {
+    <p [id]="id + '-hint'" class="app-field__hint">{{ hintText }}</p>
+  }
+</div>
